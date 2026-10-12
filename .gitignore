@@ -1,0 +1,51 @@
+# Git ignore configuration for CareerOS
+
+# Personal Career Records (Strictly Confidential)
+# Your live dossier and application tracker should never be pushed to a public remote
+MASTER_CAREER_DOSSIER.md
+TRACKER.md
+my_dossier*.md
+tracker*.md
+*.secret.md
+
+# LaTeX Build Artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+latex_engine/output/
+*.pdf
+
+# Python Environment and Cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Operating System and Editor Files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.antigravity/
+.gemini/

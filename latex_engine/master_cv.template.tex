@@ -1,0 +1,90 @@
+% Multi-Target Resume Template
+% Conditionally compile target variants (swe, de, ml, rob, full) via build flags.
+\documentclass[letterpaper,10pt]{article}
+\usepackage{cvstyle}
+
+% Macro definition fallback for build flag
+\ifdefined\targetprofile
+\else
+  \def\targetprofile{swe}
+\fi
+
+\begin{document}
+
+%------------------------- HEADING -------------------------
+\begin{center}
+    {\Huge \textbf{ALEXANDER J. MORGAN}} \\ \vspace{2pt}
+    \small London, United Kingdom $|$ +44 20 7946 0912 $|$ \href{mailto:alex.morgan@example.com}{alex.morgan@example.com} \\ \vspace{1pt}
+    \href{https://linkedin.com/in/alexmorgan}{linkedin.com/in/alexmorgan} $|$ \href{https://github.com/alexmorgan}{github.com/alexmorgan} $|$ \href{https://alexmorgan.dev}{alexmorgan.dev}
+\end{center}
+\vspace{-8pt}
+
+%------------------------- EDUCATION -------------------------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Imperial College London}{London, UK}
+    {Bachelor of Engineering in Computing; First Class Honours}{Oct 2023 -- Jun 2026}
+    \resumeItemListStart
+      \resumeItem{Core Modules: Distributed Systems, Operating Systems, Machine Learning, Compilers, Database Architecture.}
+      \resumeItem{Honours and Awards: Faculty of Engineering Dean's List (2024, 2025); Computing Society Project Laureate.}
+    \resumeItemListEnd
+\resumeSubHeadingListEnd
+
+%------------------------- EXPERIENCE -------------------------
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Systems Engineering Intern}{London, UK}
+    {Vortex Cloud Systems}{Jun 2025 -- Sep 2025}
+    \resumeItemListStart
+      \resumeItem{Architected high-throughput telemetry ingestion service using Go and Apache Kafka, handling 15,000 events/sec.}
+      \resumeItem{Optimized memory allocation routines across network worker pools, reducing p99 latency from 45ms to 12ms.}
+      \resumeItem{Integrated distributed tracing with OpenTelemetry, cutting mean time to resolution (MTTR) for outages by 40\%.}
+    \resumeItemListEnd
+
+  \resumeSubheading
+    {Software Engineering Intern}{Cambridge, UK}
+    {Axiom Data Labs}{Jul 2024 -- Sep 2024}
+    \resumeItemListStart
+      \resumeItem{Engineered distributed data pipeline using Python, PySpark, and PostgreSQL to aggregate daily financial metrics.}
+      \resumeItem{Refactored legacy REST synchronization endpoints to asynchronous worker queues, eliminating timeout failures.}
+      \resumeItem{Constructed unit and end-to-end integration test suites with pytest, expanding code coverage from 62\% to 88\%.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%------------------------- PROJECTS -------------------------
+\section{Technical Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {High-Concurrency Key-Value Store $|$ \emph{C++, POSIX Threads, TCP/IP, Linux}}{Jan 2025 -- Mar 2025}
+    \resumeItemListStart
+      \resumeItem{Engineered an in-memory key-value database in modern C++ utilizing lock-free skip lists and custom memory pools.}
+      \resumeItem{Implemented custom binary wire protocol achieving 110,000 queries per second under concurrent multi-client load.}
+      \resumeItem{Integrated append-only log (AOL) persistence with asynchronous fsync worker routines to ensure data durability.}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {Autonomous Compliance and QA Auditor $|$ \emph{TypeScript, Playwright, Node.js, axe-core}}{Oct 2024 -- Dec 2024}
+    \resumeItemListStart
+      \resumeItem{Engineered autonomous browser test suite validating 18 web application routes across 5 viewport configurations.}
+      \resumeItem{Automated multi-factor authentication bypassing Altcha challenges and mailbox polling in under 6 seconds.}
+      \resumeItem{Audited accessibility and privacy compliance under EN 301 549, generating automated triaged issue exports.}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%------------------------- TECHNICAL SKILLS -------------------------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: C++, Go, Python, TypeScript, SQL, Rust, Bash} \\
+     \textbf{Systems \& Cloud}{: Linux, Docker, Kubernetes, AWS, Apache Kafka, Redis, PostgreSQL} \\
+     \textbf{Developer Tooling}{: Git, GitHub Actions, CMake, gdb, Playwright, pytest, LaTeX}
+    }}
+\end{itemize}
+
+\end{document}
