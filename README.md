@@ -1,8 +1,8 @@
-# CareerOS
+﻿# DossierEngine
 
 **Stop writing resumes from memory under deadline pressure. Let AI mine your everyday engineering work.**
 
-CareerOS is a private, local-first system that turns git diffs, terminal logs, and messy coding chat transcripts into an audit-proof technical dossier, then compiles precision one-page LaTeX resumes on demand.
+DossierEngine is a private, local-first system that turns git diffs, terminal logs, and messy coding chat transcripts into an audit-proof technical dossier, then compiles precision one-page LaTeX resumes on demand.
 
 ---
 
@@ -17,7 +17,7 @@ CareerOS is a private, local-first system that turns git diffs, terminal logs, a
 
 ## How This System Solves It
 
-CareerOS introduces an engineering workflow for your career history:
+DossierEngine introduces an engineering workflow for your career history:
 
 1. **Three-Minute Voice Brain Dumps (`Win + H` / Dictation)**
    When you finish a tough feature or close a major pull request, turn on speech-to-text and talk freely for three minutes about what you built, what broke, how you debugged it, and what numbers changed. The system turns that raw brain dump into calibrated bullet points.
@@ -54,8 +54,8 @@ CareerOS introduces an engineering workflow for your career history:
 3. Set visibility to **Private** to keep your records confidential.
 4. Clone to your machine:
    ```bash
-   git clone https://github.com/<your-username>/career-os.git
-   cd career-os
+   git clone https://github.com/<your-username>/dossier-engine.git
+   cd dossier-engine
    ```
 
 ### Step 2: Initialize Your Working Files
@@ -79,7 +79,7 @@ Copy that raw text alongside [`prompts/extract_from_transcripts.md`](prompts/ext
 ## 🏗️ Repository Architecture
 
 ```
-career-os/
+dossier-engine/
 ├── MASTER_CAREER_DOSSIER.md       # Private single source of truth (gitignored)
 ├── TRACKER.md                    # Active application pipeline (gitignored)
 ├── template/
@@ -130,7 +130,7 @@ python latex_engine/compile_cvs.py swe
 Keep your private repository up to date with core template releases without overwriting your personal data:
 
 ```bash
-git remote add upstream https://github.com/blip-cmd/career-os.git
+git remote add upstream https://github.com/blip-cmd/dossier-engine.git
 git fetch upstream
 git merge upstream/main --allow-unrelated-histories -m "chore: sync updates from upstream"
 ```

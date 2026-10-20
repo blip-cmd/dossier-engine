@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""Cross-platform LaTeX Resume Compilation Engine for CareerOS.
+﻿#!/usr/bin/env python3
+"""Cross-platform LaTeX Resume Compilation Engine for DossierEngine.
 
 Compiles master_cv.template.tex into target PDF variants (swe, de, ml, rob, full)
 and isolates build artifacts in an output directory.

@@ -1,8 +1,8 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """GitHub Repository Metadata Extractor.
 
 Extracts repository stars, forks, languages, and topics from public GitHub repos
-to assist in drafting verified metrics for CareerOS project matrices.
+to assist in drafting verified metrics for DossierEngine project matrices.
 """
 
 import json
@@ -15,7 +15,7 @@ def fetch_repo_data(repo_slug):
     url = f"https://api.github.com/repos/{repo_slug}"
     req = urllib.request.Request(
         url,
-        headers={"User-Agent": "CareerOS-Extractor/1.0", "Accept": "application/vnd.github.v3+json"}
+        headers={"User-Agent": "DossierEngine-Extractor/1.0", "Accept": "application/vnd.github.v3+json"}
     )
     
     try:

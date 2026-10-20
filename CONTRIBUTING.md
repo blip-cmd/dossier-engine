@@ -1,12 +1,12 @@
-# Contributing to CareerOS
+﻿# Contributing to DossierEngine
 
-Thank you for your interest in improving CareerOS. We welcome contributions from developers, researchers, and technical writers.
+Thank you for your interest in improving DossierEngine. We welcome contributions from developers, researchers, and technical writers.
 
 ---
 
 ## Code of Conduct and Principles
 
-1. **Simplicity First**: CareerOS is designed so users gain immediate value within ten minutes. New features, prompts, or scripts should minimize dependencies and complex setup steps.
+1. **Simplicity First**: DossierEngine is designed so users gain immediate value within ten minutes. New features, prompts, or scripts should minimize dependencies and complex setup steps.
 2. **Strict Privacy by Design**: Never commit personal career data, real phone numbers, addresses, institutional credentials, or sensitive work history into the public codebase.
 3. **Typographic Standard**: We follow clean typography. Do not introduce em dashes (neither unicode `—` nor LaTeX triple hyphens) in documentation, scripts, LaTeX templates, or pull request descriptions. Use commas, colons, parentheses, semicolons, or distinct sentences.
 
@@ -26,8 +26,8 @@ Thank you for your interest in improving CareerOS. We welcome contributions from
 1. Fork the repository on GitHub.
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/<your-username>/career-os.git
-   cd career-os
+   git clone https://github.com/<your-username>/dossier-engine.git
+   cd dossier-engine
    ```
 3. Create a descriptive feature branch:
    ```bash

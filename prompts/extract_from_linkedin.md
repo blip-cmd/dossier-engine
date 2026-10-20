@@ -1,6 +1,6 @@
-# Prompt: Ingesting LinkedIn Archives into the Career Dossier
+﻿# Prompt: Ingesting LinkedIn Archives into the Career Dossier
 
-> **Usage:** Export your LinkedIn data archive (Settings & Privacy -> Data privacy -> Get a copy of your data -> Download archive) or copy your profile text, and use this prompt to convert it into the CareerOS dossier format.
+> **Usage:** Export your LinkedIn data archive (Settings & Privacy -> Data privacy -> Get a copy of your data -> Download archive) or copy your profile text, and use this prompt to convert it into the DossierEngine dossier format.
 
 ---
 
@@ -28,5 +28,5 @@ Your goal is to parse this information and convert it into the structured sectio
 ---
 
 ### Desired Output:
-Please output the parsed information formatted strictly according to the sections of the CareerOS Master Dossier schema.
+Please output the parsed information formatted strictly according to the sections of the DossierEngine Master Dossier schema.
 ```

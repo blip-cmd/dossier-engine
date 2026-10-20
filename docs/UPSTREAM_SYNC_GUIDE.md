@@ -1,6 +1,6 @@
-# Upstream Synchronization Guide
+﻿# Upstream Synchronization Guide
 
-When you create your private career repository from the CareerOS template, your repository begins as an independent copy. As new features, compilation scripts, LaTeX styling improvements, and AI ingestion prompts are released upstream, you can easily pull them in.
+When you create your private career repository from the DossierEngine template, your repository begins as an independent copy. As new features, compilation scripts, LaTeX styling improvements, and AI ingestion prompts are released upstream, you can easily pull them in.
 
 This guide explains how to synchronize your private repository with upstream releases without overwriting your personal data.
 
@@ -14,20 +14,20 @@ In your local cloned repository, check your existing remotes:
 git remote -v
 ```
 
-If `upstream` is not listed, add the official CareerOS repository as your upstream remote:
+If `upstream` is not listed, add the official DossierEngine repository as your upstream remote:
 
 ```bash
-git remote add upstream https://github.com/blip-cmd/career-os.git
+git remote add upstream https://github.com/blip-cmd/dossier-engine.git
 ```
 
 Verify that the remote was added successfully:
 
 ```bash
 git remote -v
-# origin    https://github.com/<your-username>/career-os.git (fetch)
-# origin    https://github.com/<your-username>/career-os.git (push)
-# upstream  https://github.com/blip-cmd/career-os.git (fetch)
-# upstream  https://github.com/blip-cmd/career-os.git (push)
+# origin    https://github.com/<your-username>/dossier-engine.git (fetch)
+# origin    https://github.com/<your-username>/dossier-engine.git (push)
+# upstream  https://github.com/blip-cmd/dossier-engine.git (fetch)
+# upstream  https://github.com/blip-cmd/dossier-engine.git (push)
 ```
 
 ---
@@ -44,7 +44,7 @@ git fetch upstream
 git checkout main
 
 # Merge upstream changes into your branch
-git merge upstream/main --allow-unrelated-histories -m "chore: sync updates from upstream career-os"
+git merge upstream/main --allow-unrelated-histories -m "chore: sync updates from upstream dossier-engine"
 ```
 
 The `--allow-unrelated-histories` flag is required because repositories created via GitHub's "Use this template" feature start with a separate initial commit history.

@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """Interactive CLI tool to append applications to TRACKER.md."""
 
 from datetime import date
@@ -18,7 +18,7 @@ def main():
             return
 
     print("=" * 60)
-    print(" CareerOS Application Pipeline Tracker (Add Entry)")
+    print(" DossierEngine Application Pipeline Tracker (Add Entry)")
     print("=" * 60)
 
     role = input("Role / Program Title       : ").strip()

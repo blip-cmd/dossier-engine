@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""CareerOS Environment Diagnostic Script.
+﻿#!/usr/bin/env python3
+"""DossierEngine Environment Diagnostic Script.
 
 Checks for essential dependencies: Python, pdflatex, and Git.
 """
@@ -27,7 +27,7 @@ def check_command(name, cmd_args, help_url):
 
 def main():
     print("=" * 60)
-    print(" CareerOS System Diagnostic (Doctor)")
+    print(" DossierEngine System Diagnostic (Doctor)")
     print("=" * 60)
     
     python_ok = sys.version_info >= (3, 8)
@@ -38,7 +38,7 @@ def main():
 
     print("-" * 60)
     if python_ok and git_ok and latex_ok:
-        print("[+] All core requirements satisfied. Your CareerOS environment is ready.")
+        print("[+] All core requirements satisfied. Your DossierEngine environment is ready.")
     else:
         print("[!] Some components are missing. Review the instructions above to complete setup.")
     print("=" * 60)

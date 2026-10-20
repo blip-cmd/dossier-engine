@@ -1,8 +1,8 @@
-# Privacy and Security Guidelines
+﻿# Privacy and Security Guidelines
 
 Your career history contains sensitive information: personal email addresses, phone numbers, compensation history, internal project names, proprietary code metrics, academic transcripts, and references.
 
-CareerOS is engineered to keep this information strictly under your control.
+DossierEngine is engineered to keep this information strictly under your control.
 
 ---
 
@@ -12,7 +12,7 @@ GitHub repositories created as a standard fork of a public repository inherit pu
 
 ### Recommended Path: Use GitHub's Template Feature
 
-1. Navigate to the official repository at `https://github.com/blip-cmd/career-os`.
+1. Navigate to the official repository at `https://github.com/blip-cmd/dossier-engine`.
 2. Click the green **"Use this template"** button and choose **"Create a new repository"**.
 3. Choose your own account or organization as the owner.
 4. Set Repository visibility to **Private**.
@@ -24,7 +24,7 @@ This creates a completely independent, private repository where only you and you
 
 ## 2. Local File Protection
 
-CareerOS comes pre-configured with a `.gitignore` file that prevents your real career files from ever being staged or committed accidentally:
+DossierEngine comes pre-configured with a `.gitignore` file that prevents your real career files from ever being staged or committed accidentally:
 
 ```gitignore
 MASTER_CAREER_DOSSIER.md
@@ -39,7 +39,7 @@ latex_engine/output/
 ### Best Practice: Keep Templates Clean
 - Maintain `template/MASTER_CAREER_DOSSIER.template.md` as the generalized schema.
 - Keep your actual, filled-out career records in `MASTER_CAREER_DOSSIER.md` at the repository root.
-- If you ever contribute improvements back to CareerOS via a pull request, verify that `git status` does not show any of your personal files staged.
+- If you ever contribute improvements back to DossierEngine via a pull request, verify that `git status` does not show any of your personal files staged.
 
 ---
 
