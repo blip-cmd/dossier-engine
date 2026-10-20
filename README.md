@@ -1,53 +1,87 @@
-# CareerOS: Autonomous Career Intelligence and Resume System
+# CareerOS
 
-CareerOS is an open-source operating system for your professional life. It turns unorganized work logs, coding chats, and project histories into an audit-proof Career Dossier, and compiles precision-targeted, one-page LaTeX resumes on demand.
+**Stop writing resumes from memory under deadline pressure. Let AI mine your everyday engineering work.**
 
-Instead of writing resumes manually under deadline stress, you let autonomous AI agents mine your everyday technical achievements, organize your impact metrics, and compile tailored resumes in seconds.
+CareerOS is a private, local-first system that turns git diffs, terminal logs, and messy coding chat transcripts into an audit-proof technical dossier, then compiles precision one-page LaTeX resumes on demand.
 
 ---
 
-## ⚡ The 5-Minute Quickstart
+## The Reality of Technical Job Hunting
 
-You do not need to spend hours configuring systems before getting value. Follow these three steps:
+* **Engineering Amnesia**: You solved a concurrency deadlock in Redis four months ago. When applying for jobs tonight, all you remember is "worked on backend." The architectural decisions, latency numbers, and hard-fought trade-offs have vanished from your memory.
+* **LLM Hallucination Trap**: Asking an AI to "write my resume" produces generic corporate fluff (*"Spearheaded synergy across cross-functional stakeholders to drive 40% growth"*) that technical interviewers immediately see through and question during interviews.
+* **Resume Sprawl Hell**: You have fourteen versions of `resume_swe_final_v3.docx`. When a recruiter calls three weeks later, you have no idea which bullet points they are looking at.
+* **Formatting Friction**: Trying to force a resume to stay on exactly one page in Word or Google Docs causes layout shifts. Adjusting one line pushes contact information onto an awkward second page.
 
-### 1. Create Your Private Repository
-To keep your personal career records completely confidential:
-1. Click the green **"Use this template"** button at the top of this GitHub repository.
+---
+
+## How This System Solves It
+
+CareerOS introduces an engineering workflow for your career history:
+
+1. **Three-Minute Voice Brain Dumps (`Win + H` / Dictation)**
+   When you finish a tough feature or close a major pull request, turn on speech-to-text and talk freely for three minutes about what you built, what broke, how you debugged it, and what numbers changed. The system turns that raw brain dump into calibrated bullet points.
+
+2. **The Dossier Pattern (Separating Truth from Layout)**
+   Your career history is maintained in an unconstrained master vault ([`MASTER_CAREER_DOSSIER.md`](template/MASTER_CAREER_DOSSIER.template.md)). You never delete an achievement or dilute technical details to fit a page limit. Page constraints exist only on compiled outputs.
+
+3. **Grounded Google XYZ Formulation**
+   Included mining prompts enforce Google's XYZ formula:
+   > *Accomplished [X] as measured by [Y] by doing [Z].*
+   The prompts extract only verifiable technical accomplishments and explicitly prohibit exaggerated claims.
+
+4. **Single-Source, Multi-Target LaTeX Engine**
+   Maintain one single LaTeX file that conditionally compiles into distinct, ATS-safe, one-page PDFs based on build flags:
+   - `python latex_engine/compile_cvs.py swe` (Software Engineering / Systems)
+   - `python latex_engine/compile_cvs.py de` (Data Platform / Distributed Pipelines)
+   - `python latex_engine/compile_cvs.py ml` (Machine Learning / Applied AI)
+   - `python latex_engine/compile_cvs.py rob` (Robotics / Hardware Systems)
+   - `python latex_engine/compile_cvs.py full` (Comprehensive multi-page academic CV)
+
+5. **Autonomous AI Agent Protocol**
+   Feed [`template/AGENT_INGESTION_GUIDE.md`](template/AGENT_INGESTION_GUIDE.md) to coding assistants like Cursor, Windsurf, Claude, or Antigravity. The agent reads your pull request diffs, structures the project matrix entry, updates your bullet bank, and commits the changes cleanly without altering your existing records.
+
+6. **Privacy-First Architecture**
+   Your real dossier and application history are gitignored by default. Using GitHub's **"Use this template"** feature ensures your private records remain inside your private repository while still allowing you to pull upstream system updates.
+
+---
+
+## ⚡ Quickstart: Zero to Value in 5 Minutes
+
+### Step 1: Create Your Private Repository
+1. Click the green **"Use this template"** button at the top of this repository.
 2. Select **"Create a new repository"**.
-3. Choose **Private** for repository visibility.
-4. Clone your new private repository to your local computer:
+3. Set visibility to **Private** to keep your records confidential.
+4. Clone to your machine:
    ```bash
    git clone https://github.com/<your-username>/career-os.git
    cd career-os
    ```
 
-### 2. Copy the Starter Templates
-Duplicate the included templates to create your working files:
+### Step 2: Initialize Your Working Files
 ```bash
 cp template/MASTER_CAREER_DOSSIER.template.md MASTER_CAREER_DOSSIER.md
 cp template/TRACKER.template.md TRACKER.md
 ```
 
-### 3. Do a 3-Minute Voice Brain-Dump
+### Step 3: Run the Speech-to-Text Shortcut
 > [!TIP]
-> **Pro-Tip: Use Speech-to-Text for Effortless Brain Dumps**
-> 
-> Typing down everything you built is exhausting. Instead, turn on your operating system's built-in speech-to-text engine and talk freely about your work for three minutes:
+> **Pro-Tip: Use Speech-to-Text for Fast Brain Dumps**
 > - **Windows**: Press `Win + H` to activate Windows Voice Typing.
 > - **macOS**: Press `Fn` twice (or `Cmd + Space` if configured) to launch Dictation.
 >
-> Open any text scratchpad, press the shortcut, and describe what you built, what broke, how you debugged it, and what numbers changed. Do not worry about grammar or resume buzzwords.
+> Open any text scratchpad, press the shortcut, and describe what you built, what broke, how you debugged it, and what numbers changed. Do not worry about grammar or resume formatting.
 
-Once you have your raw brain dump or chat transcript, pass it along with [`prompts/extract_from_transcripts.md`](prompts/extract_from_transcripts.md) to any AI assistant (ChatGPT, Claude, Cursor, Antigravity, or Windsurf). The AI will structure your raw thoughts into high-impact, Google XYZ-formula bullet points and update your `MASTER_CAREER_DOSSIER.md`.
+Copy that raw text alongside [`prompts/extract_from_transcripts.md`](prompts/extract_from_transcripts.md) into any AI assistant. It will output structured, audit-proof project entries ready for your dossier.
 
 ---
 
-## 🏗️ System Architecture
+## 🏗️ Repository Architecture
 
 ```
 career-os/
-├── MASTER_CAREER_DOSSIER.md       # Your private single source of career truth (gitignored)
-├── TRACKER.md                    # Active job and fellowship application pipeline (gitignored)
+├── MASTER_CAREER_DOSSIER.md       # Private single source of truth (gitignored)
+├── TRACKER.md                    # Active application pipeline (gitignored)
 ├── template/
 │   ├── MASTER_CAREER_DOSSIER.template.md  # Comprehensive dossier schema
 │   ├── TRACKER.template.md                # Application tracking lifecycle table
@@ -72,76 +106,39 @@ career-os/
 
 ---
 
-## 🤖 Autonomous AI Agent Workflow
+## 📄 Compiling Targeted LaTeX Resumes
 
-CareerOS is built from the ground up for modern AI coding tools (such as Cursor, Windsurf, Antigravity, and GitHub Copilot CLI).
-
-When you finish a major coding feature or milestone in any project:
-1. Provide the agent with [`template/AGENT_INGESTION_GUIDE.md`](template/AGENT_INGESTION_GUIDE.md).
-2. Point the agent to your project conversation log, commit diffs, or code files.
-3. The agent reads the guide, extracts technical accomplishments, formats them according to the Google XYZ standard (Accomplished [X] as measured by [Y] by doing [Z]), and appends them to your `MASTER_CAREER_DOSSIER.md`.
-
----
-
-## 📄 Multi-Target LaTeX Resume Engine
-
-CareerOS lets you maintain **one single master LaTeX source** that compiles into multiple specialized one-page resumes based on build flags:
-
-- `swe`: Software Engineering
-- `de`: Data Engineering and Backend Systems
-- `ml`: Machine Learning and Data Science
-- `rob`: Robotics and Hardware Systems
-- `full`: Complete multi-page comprehensive master CV
-
-### Compiling Resumes
-
-Check that your environment has Python and a TeX distribution (such as MiKTeX, TeX Live, or MacTeX):
-
+Verify your local environment dependencies:
 ```bash
-# Run system diagnostic
 python tools/doctor.py
+```
 
-# Compile all targeted one-page PDFs
+Compile all target 1-page PDF resumes into `latex_engine/output/`:
+```bash
 python latex_engine/compile_cvs.py
 ```
 
-All compiled PDFs are saved into `latex_engine/output/` without cluttering your root workspace.
-
----
-
-## 🔒 Privacy and Security Guarantee
-
-Your personal career history, contact details, grades, and application records belong to you alone.
-
-1. **Local Files are Gitignored**: The root `.gitignore` file automatically excludes your live `MASTER_CAREER_DOSSIER.md`, `TRACKER.md`, and private PDF builds from ever being pushed to public remotes.
-2. **Private Template Usage**: When you generate your repository using **"Use this template"**, make sure you mark your personal repository as **Private**.
-3. **Audit Before Sharing**: For complete details on keeping your data secure, consult [`docs/PRIVACY_AND_SECURITY.md`](docs/PRIVACY_AND_SECURITY.md).
-
----
-
-## 🔄 Syncing with Upstream Improvements
-
-As new features, LaTeX styling updates, and ingestion prompts are added to the official `career-os` repository, you can pull them into your private repository without overwriting your personal dossier:
-
+Or compile a single target role:
 ```bash
-# Add upstream remote once
-git remote add upstream https://github.com/blip-cmd/career-os.git
-
-# Pull template enhancements
-git fetch upstream
-git merge upstream/main --allow-unrelated-histories
+python latex_engine/compile_cvs.py swe
 ```
 
-Step-by-step conflict resolution instructions are documented in [`docs/UPSTREAM_SYNC_GUIDE.md`](docs/UPSTREAM_SYNC_GUIDE.md).
-
 ---
 
-## 🤝 Contributing
+## 🔄 Pulling Future Upstream Improvements
 
-We welcome community contributions, additional prompt recipes, and styling improvements. Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request.
+Keep your private repository up to date with core template releases without overwriting your personal data:
+
+```bash
+git remote add upstream https://github.com/blip-cmd/career-os.git
+git fetch upstream
+git merge upstream/main --allow-unrelated-histories -m "chore: sync updates from upstream"
+```
+
+For complete conflict resolution instructions, see [`docs/UPSTREAM_SYNC_GUIDE.md`](docs/UPSTREAM_SYNC_GUIDE.md).
 
 ---
 
 ## 📜 License
 
-CareerOS is open source under the [MIT License](LICENSE).
+Distributed under the [MIT License](LICENSE).
