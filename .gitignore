@@ -1,4 +1,4 @@
-﻿# Git ignore configuration for DossierEngine
+# Git ignore configuration for DossierEngine
 
 # Personal Career Records (Strictly Confidential)
 # Your live dossier and application tracker should never be pushed to a public remote
@@ -6,6 +6,7 @@ MASTER_CAREER_DOSSIER.md
 TRACKER.md
 my_dossier*.md
 tracker*.md
+!template/TRACKER.template.md
 *.secret.md
 
 # LaTeX Build Artifacts
