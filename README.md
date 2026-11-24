@@ -1,4 +1,4 @@
-﻿# DossierEngine
+# DossierEngine
 
 **Stop writing resumes from memory under deadline pressure. Let AI mine your everyday engineering work.**
 
@@ -73,6 +73,16 @@ cp template/TRACKER.template.md TRACKER.md
 > Open any text scratchpad, press the shortcut, and describe what you built, what broke, how you debugged it, and what numbers changed. Do not worry about grammar or resume formatting.
 
 Copy that raw text alongside [`prompts/extract_from_transcripts.md`](prompts/extract_from_transcripts.md) into any AI assistant. It will output structured, audit-proof project entries ready for your dossier.
+
+---
+
+## Tech Stack
+
+Python (command-line scripts), LaTeX (`pdflatex`) and GitHub Actions, which compiles the templates on every push.
+
+## What I Would Improve Next
+
+- Add unit tests for the tools in `tools/`.
 
 ---
 
